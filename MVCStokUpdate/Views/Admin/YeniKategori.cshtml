@@ -1,0 +1,23 @@
+﻿
+@using MVCStokUpdate
+@model MVCStokUpdate.Models.Entity.TBLKATEGORILER
+@{
+    ViewBag.Title = "YeniKategori";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        @Html.HiddenFor(p1=>p1.KATEGORIID)
+        <label>Kategori Adı:</label>
+        @Html.TextBoxFor(m => m.KATEGORIAD, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px;">
+
+
+        <button class="btn btn-info" />Kategori Ekle</button>
+    </div>
+</form>
+
+
+

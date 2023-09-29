@@ -1,0 +1,19 @@
+﻿@using MVCStokUpdate.Models.Entity
+@model TBLMUSTERILER 
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+
+<form method="post" class="container">
+    <br />
+    <br />
+    @Html.TextBoxFor(i => i.MUSTERIAD, new { @placeholder = "Adınız...", @class = "form form-control" })<br /><br />
+    @Html.TextBoxFor(i => i.MUSTERISIFRE, new { @placeholder = "Şifreniz...", @class = "form form-control" })<br /><br />
+    <button class="btn btn-success"> Giriş Yap</button>
+</form>
+
+

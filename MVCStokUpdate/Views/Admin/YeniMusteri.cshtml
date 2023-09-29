@@ -1,0 +1,29 @@
+﻿
+
+@using MVCStokUpdate
+@model MVCStokUpdate.Models.Entity.TBLMUSTERILER
+@{
+    ViewBag.Title = "YeniMusteri";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        @Html.HiddenFor(m=>m.MUSTERIID)
+        <label>Adınız:</label>
+        @Html.TextBoxFor(m => m.MUSTERIAD, new { @class = "form-control" })
+        @*<input type="text" class="form-control" name="MUSTERIAD" />*@
+
+        <label>Soyadınız:</label>
+        @Html.TextBoxFor(m => m.MUSTERISOYAD, new { @class = "form-control" })
+        @*<input type="text" class="form-control" name="MUSTERISOYAD" />*@
+
+        <label>Mail Bilgileriniz:</label>
+        @Html.TextBoxFor(m => m.MUSTERIMAIL, new { @class = "form-control" })
+        @*<input type="email" class="form-control" name="MUSTERIMAIL" />*@
+    </div>
+    <div style="margin-top:15px;">
+        <button class="btn btn-info" />Kayıt</button>
+    </div>
+</form>
+

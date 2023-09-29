@@ -1,0 +1,44 @@
+﻿@using MVCStokUpdate
+@model MVCStokUpdate.Models.Entity.TBLURUNLER
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using (Html.BeginForm("Admin", "YeniUrun", FormMethod.Post, new { @class = "form-group" }))
+{
+    <div>
+
+        <label>Ürün Adı:</label>
+        @Html.TextBoxFor(k => k.URUNAD, new { @class = "form-control" })
+
+
+        <label>Marka:</label>
+        @Html.TextBoxFor(k => k.MARKA, new { @class = "form-control" })
+
+
+        <label>Kategori:</label>
+        @Html.DropDownListFor(k => k.TBLKATEGORILER.KATEGORIAD, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+
+
+        <label>Fiyat:</label>
+        @Html.TextBoxFor(k => k.FIYAT, new { @class = "form-control" })
+
+
+        <label>Stok:</label>
+        @Html.TextBoxFor(k => k.STOK, new { @class = "form-control" })
+
+
+        <label>Ürün Görsel URL Bilgisi:</label>
+        @Html.TextBoxFor(k => k.GORSELLER, new { @class = "form-control" })
+
+
+    </div>
+    <div style="margin-top:15px;">
+        <button class="btn btn-info" >Ürün Ekle</button>
+    </div>
+}
+<form class="form-group" method="post">
+</form>
+
+
+

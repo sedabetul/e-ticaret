@@ -1,0 +1,63 @@
+﻿@using MVCStokUpdate
+@using MVCStokUpdate.Models.Entity
+
+@{
+    ViewBag.Title = "HomePage";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<head>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <style>
+
+        .cardi {
+            width: 200px;
+            height: 350px;
+            float: left;
+            margin: 8px;
+            border-radius: 8px;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            margin-left: 25px;
+            margin-top: 5px;
+            border-style: dashed;
+        }
+
+        p {
+            margin-left: 3px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+@{int adet = 0;}
+
+@foreach (var a in Model)
+{
+
+    <div class="cardi" style="background-color: rgb(209, 216, 224)">
+
+        <div>
+            <img src="@a.GORSELLER " />
+
+            <br />
+            <p class="card-title">Ürün Adı: @a.URUNAD</p>
+            <p class="card-text">Marka:       @a.MARKA</p>
+            <p class="card-text">Ürün Kategori:   @a.URUNKATEGORI</p>
+            <p class="card-text">Stok:            @a.STOK</p>
+
+      
+        <a href="/User/sepeteekle?Id=@a.URUNID" class="btn btn-primary" style="margin-left:50px;margin-top:15px;">Sepete Ekle</a>
+        
+
+
+        </div>
+    </div>
+
+}
+
+
+

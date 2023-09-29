@@ -1,0 +1,59 @@
+﻿
+
+@using MVCStokUpdate
+@using MVCStokUpdate.Models.Entity
+@model List<TBLMUSTERILER>
+@{
+    ViewBag.Title = "Musteri";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<head>
+    <style>
+        table {
+            margin-top: 60px;
+            background-color: rgb(214, 162, 232);
+            color: white;
+        }
+
+        body {
+            background-image: url('../../image/pexels-content-pixie-2736499.jpg');
+            background-color: rgb(214, 162, 232);
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<table class="table table-bordered">
+    <caption style="color:darkred; border:2px solid Violet;">KULLANICILAR <a href="/Admin/YeniMusteri" class="btn btn-primary" style="background-color: rgb(184,132,202); margin-left: 930px; ">Müşteri Ekle</a></caption>
+    <tr>
+        <th style="color:darkred">Müşteri Adı:</th>
+        <th style="color:darkred">Müşteri Soyadı:</th>
+        <th style="color:darkred">Müşteri Mail:</th>
+
+
+    </tr>
+
+    <tbody>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.MUSTERIAD</td>
+                <td>@a.MUSTERISOYAD</td>
+                <td>@a.MUSTERIMAIL</td>
+
+                <td>
+                    <a href="/Admin/MSil/@a.MUSTERIID" class="btn btn-danger" style="background-color: rgb(184,132,202);float:right">Sil</a>
+                    <a href="/Admin/YeniMusteri?id=@a.MUSTERIID" class="btn btn-danger" style="background-color: rgb(184,132,202);float:right">Güncelle</a>
+                </td>
+
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
+

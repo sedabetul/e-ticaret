@@ -1,0 +1,52 @@
+﻿@using MVCStokUpdate.Models.Entity
+@model MVCStokUpdate.Models.Entity.TBLMUSTERILER
+@{
+    Layout = null;
+}
+
+<head>
+    <style>
+        form {
+            width: 310px;
+            height: 350px;
+            border: solid rgb(214, 162, 232) 8px;
+            margin-left: 440px;
+            margin-top: 140px;
+        }
+
+        body {
+            background-color: slategray;
+            background-size: cover;
+            background-image: url('../../image/b1.jpg');
+            font-family: sans-serif;
+        }
+
+        .ekle {
+            width: 90%;
+            margin-left: 12px;
+            height: 35px;
+            border-radius: 3px;
+            border-style: none;
+        }
+    </style>
+</head>
+
+
+<form style="background-color:transparent" method="post" action="abc">
+    <br /><br /><br />
+    <h3 style="font-family:'Courier New'; margin-left:10px;margin-right:10px;text-align:center ;color:white; background-color: rgb(214, 162, 232);font-size:22px"><b> Üye Giriş </b></h3><br />
+
+    @Html.TextBoxFor(m => m.MUSTERIAD, new { @class = "ekle", @placeholder = "Adınız..." })<br /><br />
+    @Html.PasswordFor(m => m.MUSTERISIFRE, new { @class = "ekle", @placeholder = "Şifreniz..." }) <br /><br />
+
+  
+
+    <input type="submit" class="btn btn-info" value="Giriş" style="width:60px;height:35px;margin-left:120px" />
+
+
+    </div>
+
+</form>
+
+
+

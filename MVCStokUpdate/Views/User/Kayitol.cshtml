@@ -1,0 +1,60 @@
+﻿@using MVCStokUpdate.Models.Entity
+@model MVCStokUpdate.Models.Entity.TBLMUSTERILER
+@{
+    ViewBag.Title = "LOGIN";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<head>
+    <style>
+        form {
+            width: 750px;
+            height: 400px;
+            border: solid rgb(214, 162, 232) 8px;
+            margin-left: 200px;
+            margin-top: 50px;
+        }
+
+        body {
+            background-color: slategray;
+            background-image: url('../../image/pexels-content-pixie-2736499.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .ozellik {
+            width: 60%;
+            height:30px;
+            margin-left: 180px;
+
+        }
+       
+
+    </style>
+</head>
+
+
+
+<form style="background-color:transparent" method="post" action="log">
+    <br /><br />
+
+
+    @Html.TextBoxFor(m => m.MUSTERIAD, new { @class = "ozellik", @placeholder = "Ad:" })
+    @Html.ValidationMessageFor(m => m.MUSTERIAD)<br /><br />
+   
+    @Html.TextBoxFor(m => m.MUSTERISOYAD, new { @class = "ozellik", @placeholder = "Soyadınız:" })
+    @Html.ValidationMessageFor(m => m.MUSTERISOYAD)<br /><br />
+    @Html.TextBoxFor(m => m.MUSTERIMAIL, new { @class = "ozellik", @placeholder = "Mailiniz:" })
+    @Html.ValidationMessageFor(m => m.MUSTERIMAIL)<br /><br />
+    @Html.PasswordFor(m => m.MUSTERISIFRE, new { @class = "ozellik", @placeholder = "Şifreniz:" })
+    @Html.ValidationMessageFor(m => m.MUSTERISIFRE)<br /><br />
+
+    @Html.PasswordFor(m => m.CONFIRMPASSWORD, new { @class = "ozellik", @placeholder = "Şifrenizi doğrulayın:" })
+    @Html.ValidationMessageFor(m => m.CONFIRMPASSWORD)<br /><br />
+    <div style="margin-left:300px;">
+        <button class="btn btn-info" />Kayıt Ol</button>
+    </div>
+
+</form>
+
+
+

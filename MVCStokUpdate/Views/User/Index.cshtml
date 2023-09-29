@@ -1,0 +1,90 @@
+﻿@model MVCStokUpdate.Models.sepet
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<body>
+    @Html.ActionLink("Alışverişe Devam Edin =>", "HomePage", "User")
+    <div class="container pb-5">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h2>Sepetim</h2>
+                <hr />
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Ürün:</th>
+                            <th>Ürün Adeti:</th>
+                            <th>Ürün Adı:</th>
+                            <th>Ürün Fiyatı:</th>
+                            <th>Ürün Sil:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var a in Model.Urunler)
+                        {
+
+                            <tr>
+                                <td><img src="@a.TBLURUNLER.GORSELLER" width="60px;" /></td>
+                                @*<td>
+                                    <input type="button" onclick="azalt();" value="-" style="border-radius:20px;border:solid 2px darkred;">
+                                    <input id="sonuc" value="1" style="border-radius:10px;border:solid 2px black;">
+                                    <input type="button" onclick="arttır();" value="+" style="border-radius:20px;border:solid 2px darkred">
+                                </td>*@
+
+                                <td>@a.adet</td>
+                                <td>@a.TBLURUNLER.URUNAD</td>
+                                <td>@a.TBLURUNLER.FIYAT</td>
+
+                                <td>
+
+                                    <a href="/User/sepetsil?Id=@a.TBLURUNLER.URUNID" class="btn btn-danger">Sil</a>
+
+                                </td>
+
+
+                            </tr>
+
+                        }
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+
+
+                            <td colspan="4"></td>
+                            <td>@Model.sepet_total()</td>
+
+
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+
+
+        function azalt() {
+
+            var sonuc = document.getElementById("sonuc");
+            sonuc.value = Number(sonuc.value) - 1;
+
+
+        }
+
+        function arttır() {
+
+            var sonuc = document.getElementById("sonuc");
+            sonuc.value = Number(sonuc.value) + 1;
+
+        }
+
+
+    </script>
+</body>
